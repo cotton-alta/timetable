@@ -1,0 +1,17 @@
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-color: #EEEEEE;
+}
+
+header {
+    background-color: #B0BEC5;
+}
+
+header h2 {
+    padding: 10px 20px;
+}
+
+#app li {
+    list-style: none;
+    border: 1px solid #B0BEC5;
+}

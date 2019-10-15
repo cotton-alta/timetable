@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>メインページ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+    minimum-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+    <meta neme="apple-mobile-web-app-capable" content="yes">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h2>時間割</h2>
+    <!--    <p>勉強とバイトを両立しよう！</p> -->
+    </header>
+    <div id="app">
+        <ul>
+            <h3>月曜日</h3>
+            <li v-for="(monday,time) in mondays">{{ time }}：{{ monday }}</li>
+            <h3>火曜日</h3>
+            <li v-for="(tuesday,time) in tuesdays">{{ time }}：{{ tuesday }}</li>
+            <h3>水曜日</h3>
+            <li v-for="(wednesday,time) in wednesdays">{{ time }}：{{ wednesday }}</li>
+            <h3>木曜日</h3>
+            <li v-for="(thursday,time) in thursdays">{{ time }}：{{ thursday }}</li>
+            <h3>金曜日</h3>
+            <li v-for="(friday,time) in fridays">{{ time }}：{{ friday }}</li>
+        </ul>
+
+        <h3 style="border-bottom: 1px solid #B0BEC5;">時間割の変更</h3>
+        <form v-on:submit.prevent>
+            <p>曜日</p>
+            <select v-model="newTable">
+                    <option disabled value="">曜日を選択</option>
+                    <option>t_monday</option>
+                    <option>t_tuesday</option>
+                    <option>t_wednesday</option>
+                    <option>t_thursday</option>
+                    <option>t_friday</option>
+                </select>
+
+            <br>
+
+            <p>時限</p>
+            <select v-model="newTime">
+                    <option disabled value="">時限を選択</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+
+            <br>
+
+            <p>科目</p>
+            <input type="text" v-model="newSubject">
+            <button v-on:click="addTable">
+                決定
+            </button>
+        </form>
+
+<!--        <pre> {{ $data }} </pre> -->
+
+    </div>
+        <footer>
+        <p>フッター内容</p>
+        </footer>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
