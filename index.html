@@ -17,18 +17,39 @@
     <!--    <p>勉強とバイトを両立しよう！</p> -->
     </header>
     <div id="app">
-        <ul>
-            <h3>月曜日</h3>
-            <li v-for="(monday,time) in mondays">{{ time }}：{{ monday }}</li>
-            <h3>火曜日</h3>
-            <li v-for="(tuesday,time) in tuesdays">{{ time }}：{{ tuesday }}</li>
-            <h3>水曜日</h3>
-            <li v-for="(wednesday,time) in wednesdays">{{ time }}：{{ wednesday }}</li>
-            <h3>木曜日</h3>
-            <li v-for="(thursday,time) in thursdays">{{ time }}：{{ thursday }}</li>
-            <h3>金曜日</h3>
-            <li v-for="(friday,time) in fridays">{{ time }}：{{ friday }}</li>
-        </ul>
+        <div class="flex-box">
+            <div class="flex-pack">
+                <a class="tab_btn active_btn" href="#table1">月曜日</a>
+            </div>
+            <div class="flex-pack">
+                <a class="tab_btn" href="#table2">火曜日</a>
+            </div>
+            <div class="flex-pack">
+                <a class="tab_btn" href="#table3">水曜日</a> 
+            </div>
+            <div class="flex-pack">
+                <a class="tab_btn" href="#table4">木曜日</a>
+            </div>
+            <div class="flex-pack">
+                <a class="tab_btn" href="#table5">金曜日</a>
+            </div>
+        </div>
+        <div class="tab_item active_item" id="table1">
+            <ul><li v-for="(monday,time) in mondays">{{ time }}：{{ monday }}</li></ul>
+        </div>
+        <div class="tab_item" id="table2">
+            <ul><li v-for="(tuesday,time) in tuesdays">{{ time }}：{{ tuesday }}</li></ul>
+        </div>
+        <div class="tab_item" id="table3">
+            <ul><li v-for="(wednesday,time) in wednesdays">{{ time }}：{{ wednesday }}</li></ul>
+        </div>
+        <div class="tab_item" id="table4">
+            <ul><li v-for="(thursday,time) in thursdays">{{ time }}：{{ thursday }}</li></ul>
+        </div>
+        <div class="tab_item" id="table5">
+            <ul><li v-for="(friday,time) in fridays">{{ time }}：{{ friday }}</li></ul>
+        </div>
+
 
         <h3 style="border-bottom: 1px solid #B0BEC5;">時間割の変更</h3>
         <form v-on:submit.prevent>

@@ -134,3 +134,15 @@ var app = new Vue({
         }
     }
 })
+
+$(function(){
+    $('.tab_btn').on('click', function(){
+        //表示させるコンテンツを変更
+        $('.tab_table').removeClass('active_table');
+        $($(this).attr("href").addClass("active_table"));
+
+        //表示させているコンテンツの色などを変更
+        $('.tab_btn').removeClass('active_btn');
+        $(this).addClass('active_btn');
+    });
+});
